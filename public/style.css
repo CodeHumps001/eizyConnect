@@ -1,0 +1,306 @@
+@import url("https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Oswald:wght@200..700&family=Outfit:wght@100..900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+.mode-c {
+  .card-container {
+    background: #000;
+    color: #fff;
+  }
+  .header {
+    background: #000;
+    color: #fff;
+  }
+  .cover-color {
+    width: 100%;
+    height: 150px;
+    background: linear-gradient(
+      90deg,
+      rgba(57, 82, 82, 0.9),
+      rgba(136, 14, 223, 0.9)
+    );
+  }
+  .card-content {
+    background: #000;
+    color: white;
+  }
+}
+
+.card-container {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Logo section */
+.header {
+  width: 100%;
+  max-width: 1000px;
+  padding: 20px;
+  position: sticky;
+  top: 0;
+  background: white; /* Prevents overlap transparency */
+  z-index: 100; /* Makes sure it stays on top */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Optional soft shadow */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+
+  /* Bottom shadow */
+  box-shadow: 0 4px 8px rgb(89, 86, 86);
+  margin-bottom: 20px;
+}
+
+.logo h1 {
+  font-size: clamp(30px, 5vw, 60px);
+  color: #595757;
+}
+.header i {
+  display: none;
+  font-size: 25px;
+}
+.logo span {
+  background: linear-gradient(
+    90deg,
+    rgba(84, 192, 179, 0.9),
+    rgba(116, 47, 205, 0.9)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  border-bottom: 2px solid #542fcd;
+  padding-bottom: 2px;
+}
+
+/* Main card */
+.main-card {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  overflow: hidden;
+}
+
+/* Cover color section */
+.cover-color {
+  width: 100%;
+  height: 150px;
+  background: linear-gradient(
+    90deg,
+    rgba(84, 192, 179, 0.9),
+    rgba(116, 47, 205, 0.9)
+  );
+}
+
+/* Profile image wrapper for gradient border */
+.profile-wrapper {
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, #54c0b3, #742fcd);
+  padding: 5px;
+  border-radius: 50%;
+}
+
+/* Profile circle */
+.profile {
+  width: 120px;
+  height: 120px;
+  background: black;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Content area (can be expanded later) */
+.card-content {
+  padding: 100px 20px 20px;
+  text-align: left;
+}
+.card-content .name {
+  margin-bottom: 10px;
+}
+.card-content .name h2 {
+  font-size: 30px;
+}
+.card-content .name p {
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: #929090;
+  font-style: italic;
+}
+.card-content .bio p {
+  font-size: 16px;
+  line-height: 22px;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.card-content h5 {
+  font-size: 15px;
+  background: linear-gradient(
+    90deg,
+    rgba(84, 192, 179, 0.9),
+    rgba(116, 47, 205, 0.7)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.socials p {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 7px 10px;
+  background: linear-gradient(
+    90deg,
+    rgba(84, 192, 179, 0.9),
+    rgba(116, 47, 205, 0.7)
+  );
+  color: #fff;
+  cursor: pointer;
+}
+/* Overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+  transition: 0.3s ease;
+}
+
+/* Modal */
+.social-modal {
+  position: fixed;
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  z-index: 20;
+  padding: 30px 20px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  transition: bottom 0.4s ease;
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Modal visible */
+.social-modal.active {
+  bottom: 0;
+}
+.overlay.active {
+  display: block;
+}
+.hidden {
+  display: none;
+}
+
+/* Close Button */
+.close-btn {
+  font-size: 25px;
+  float: right;
+  cursor: pointer;
+}
+
+/* Modal icons layout */
+.social-modal .handles {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 40px;
+}
+.social-modal .handles a {
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+  color: #333;
+}
+.social-modal .handles a i {
+  font-size: 28px;
+  margin-bottom: 5px;
+}
+
+.handles a .blu {
+  color: #60bdeb;
+}
+.handles a .gr {
+  color: rgb(107, 171, 12);
+}
+.handles a .bla {
+  color: #000;
+}
+.handles a .red {
+  color: red;
+}
+
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+#loader h1 {
+  font-size: 40px;
+  font-family: "Outfit", sans-serif;
+  color: #444;
+}
+
+#loader h1 span {
+  background: linear-gradient(90deg, #54c0b3, #742fcd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#main-content {
+  opacity: 0;
+  transition: opacity 0.8s ease-in;
+}
+
+body.loaded #main-content {
+  opacity: 1;
+}
+
+/* Mobile support */
+@media (max-width: 440px) {
+  .main-card {
+    width: 100vw !important;
+    max-width: 100%;
+  }
+  .profile {
+    width: 100px;
+    height: 100px;
+  }
+  .profile-wrapper {
+    top: 90px;
+  }
+  .header i {
+    display: block;
+    font-size: 25px;
+  }
+}

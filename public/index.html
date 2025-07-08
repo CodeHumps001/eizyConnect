@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>eizyConnect</title>
+    <link rel="icon" type="image/png" href="../assets/images/favicon.png" />
+
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div id="loader">
+      <h1>eizy<span>Connect</span></h1>
+      <p>Connect with ease...</p>
+    </div>
+    <div class="card-container hero">
+      <div class="header">
+        <div class="logo">
+          <h1>eizy<span>Connect</span></h1>
+        </div>
+        <i class="fa-solid fa-moon" id="mode"></i>
+      </div>
+      <div class="main-card">
+        <div class="cover-color"></div>
+
+        <!-- Profile Image Container -->
+        <div class="profile-wrapper">
+          <div class="profile">
+            <img
+              src="../assets/images/my-pic.jpg"
+              alt="Profile"
+              width="100%"
+              height="100%"
+              style="border-radius: 50%"
+            />
+          </div>
+        </div>
+
+        <div class="card-content">
+          <div class="name">
+            <h5 for="">Name:</h5>
+            <h2>Yaw Fosu</h2>
+            <p>codehumps</p>
+          </div>
+          <div class="bio">
+            <h5>My Bio:</h5>
+            <p>
+              Hi, I’m Yaw Fosu — a passionate frontend developer and aspiring
+              full-stack engineer. I enjoy turning ideas into responsive,
+              user-friendly digital experiences using HTML, CSS, JavaScript, and
+              modern frameworks. I’m currently building creative tools that
+              solve everyday problems, starting with smart digital business
+              cards. Let’s connect and build something impactful together.
+            </p>
+          </div>
+          <div class="account-type">
+            <h5>Account Type:</h5>
+            <p>Personal Account</p>
+          </div>
+          <div class="address">
+            <h5>Location:</h5>
+            <p>kronum, kumasi - Ghana</p>
+          </div>
+          <!-- Show Button -->
+          <div class="socials">
+            <p id="show-socials" class="show-social-btn">Show Social Handles</p>
+          </div>
+
+          <!-- Overlay -->
+          <div id="overlay" class="overlay hidden"></div>
+
+          <!-- Social Modal -->
+          <div id="socialModal" class="social-modal hidden">
+            <span id="closeModalBtn" class="close-btn">&times;</span>
+            <div class="handles">
+              <a href="https://wa.me/233257031581"
+                ><i class="fa-brands fa-whatsapp gr"></i>
+                <p>WhatsApp</p></a
+              >
+              <a href="https://t.me/pretty_pretty0"
+                ><i class="fa-brands fa-telegram blu"></i>
+                <p>Telegram</p></a
+              >
+              <a href="https://github.com/CodeHumps001"
+                ><i class="fa-brands fa-github bla"></i>
+                <p>GitHub</p></a
+              >
+              <a
+                href="https://www.linkedin.com/in/yaw-fosu-7a5583356?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+                ><i class="fa-brands fa-linkedin blu"></i>
+                <p>Linkedin</p></a
+              >
+              <a href="https://x.com/codehumps001?s=11"
+                ><i class="fa-brands fa-x-twitter bla"></i>
+                <p>X</p></a
+              >
+              <a href="https://www.tiktok.com/@codehumps?_t=ZM-8xrMdw5e8gg&_r=1"
+                ><i class="fa-brands fa-tiktok bla"></i>
+                <p>Tiktok</p></a
+              >
+              <a href="https://youtube.com/@codehumps?si=0wYDtNjBpLLs9fA9"
+                ><i class="fa-brands fa-youtube red"></i>
+                <p>Youtube</p></a
+              >
+              <a href="#"
+                ><i class="fa-solid fa-phone gr"></i>
+                <p>Phone</p></a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../public/index.js"></script>
+  </body>
+</html>
